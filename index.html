@@ -1,154 +1,315 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>模拟论坛</title>
+		<meta charset="utf-8" />
+		<title>Li Shu's site</title>
+		<link href="img/title.ico" rel="shortcut icon"/>
 		<style type="text/css">
-			/*对网页进行第二次修饰*/
-			body{font-size: 12px;}
-			/*对整个标签,和表格 设置宽度为990像素*/
-			#discuss,#discuss-datas{
-				width: 990px;
+			html{
+				position: relative;
 			}
-			#discuss div.mt{
-				/*高度,边框,背景*/
-				height: 30px;
-				border: 1px solid #DDDDDD;
-				border-top: 2px solid #999999;
-				background: #f7f7f7;
+			.top{
+				background-color: #FFFFFF;
+				height: 60px;
+				width: 1900px;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
-			#discuss-content{
-				border-bottom: 1px solid #DDDDDD;
+			.top h1{
+				padding-left: 150px;
+				font-family: "华文新魏";
 			}
-			#discuss-datas tr.header td{
-				/*加粗 上下内边距 下边框*/
+			.top-left{
+				width: 250px;
+				height: 50px;
+			}
+			.top-left span{
+				position: absolute;
+				top: 15px;
+				left: 250px;
+				font-family: "华文新魏";
+				font-size: 28px;
+				color: pink;
+				float: left;
+				display: none;
+			}
+			.top-left:hover span{
+				display: block;
+			}
+			.top1{
+				position: absolute;
+				top: 0px;
+				left: 600px;
+				padding: 20px;
+				font-family: "华文新魏";
+				font-size: 30px;
+			}
+			.top2{
+				position: absolute;
+				top: 0px;
+				left: 800px;
+				padding: 20px;
+				font-family: "华文新魏";
+				font-size: 30px;
+			}
+			.top3{
+				position: absolute;
+				top: 0px;
+				left: 1050px;
+				padding: 20px;
+				font-family: "华文新魏";
+				font-size: 30px;
+			}
+			.top4{
+				position: absolute;
+				top: 0px;
+				left: 1300px;
+				padding: 20px;
+				font-family: "华文新魏";
+				font-size: 30px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			a:hover{
+				text-decoration: none;
+				color:  orange;
+			}
+			a:active{
+				text-decoration: line-through;
+				color: cadetblue;
+			}
+			.top-right{
+					position: absolute;
+					top: 0px;
+					right: 30px;
+					padding: 20px;
+					font-family: "华文新魏";
+					font-size: 20px;
+			}
+			.top img{
+				width: 40px;
+				height: 40px;
+				border-radius: 25px;
+				position: absolute;
+				top: 5px;
+				right: 0px;
+			}
+			.top-right1{
+					position: absolute;
+					top: -4px;
+					right: -150px;
+					padding: 20px;
+			}
+			.top-right1 input{
+				font-family: "华文新魏";
+				font-size: 20px;
+				border-radius: 8px;
+			}
+			.main{
+				position: absolute;
+				top: 60px;
+				left: 0;
+				background-image: url(img/人生背景.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				width: 2133px;
+				height: 1141px;
+			}
+			.main-left h1{
+				position: absolute;
+				left: 50px;
+				top: 180px;
+				color: #517693;
+				font-size: 40px;
 				font-weight: bold;
-				padding: 5px 0;
-				border-bottom: 1px solid #DDDDDD;
-				color: #666666;
+				font-family: "华文行楷";
 			}
-			#discuss-datas td{
-				/*内容水平居中对齐*/
-				text-align: center;
+			.main-left h3{
+				position: absolute;
+				left: 50px;
+				top: 280px;
+				color: #517693;
+				font-size: 28px;
+				font-weight: bold;
+				font-family: "华文行楷";
 			}
-			#discuss-datas td.col1{
-				/*宽度,文本左对齐*/
-				width: 620px;
-				text-align: left;
+			.center-left{
+				position: absolute;
+				top: 30px;
+				left: 550px;
+				width: 250px;
+				height: 850px;
+				border: 3px solid white;
+				border-radius: 20px;
+				background-color:white;
+				opacity: 0.8;
 			}
-			#discuss-datas tbody td{
-				/*文本颜色*/
-				color: #9c9c9c;
-			}
-			#discuss a{
-				/*改链接颜色 去掉下划线*/
-				text-decoration: none;
-				color: #005aa0;
-			}
-			#discuss a:hover{
-				text-decoration: underline;
-			}
-			#discuss-datas tbody td{
-				/*上下内边距 下边框*/
-				padding: 5px 0px;
-				border-bottom: 1px dotted #DDDDDD;
-			}
-			/*给论坛内容加标签 加图标*/
-			#discuss i{
-				/*左内边距 下内边距高度 背景图*/
-				padding-left: 21px;
-				padding-bottom: 5px;
-				background:url(img/c63802c9ee7e4ddec0e53e152e665ea.png) no-repeat;
-				background-size: 100%;
-			}
-			#discuss div.mt a{
-				float:left;
+			.center-left img{
 				width: 100px;
-				height: 30px;
+				height: 100px;
+				border-radius: 100px;
+				position: absolute;
+				top: 5px;
+				left: 75px;
+			}
+			.center-left #name{
+				position: absolute;
+				top: 110px;
+				left: 75px;
 				text-align: center;
-				line-height: 30px;
+				font-family: "华文新魏";
+				font-size: 17px;
 			}
-			#discuss div.mt a:hover{
-				text-decoration: none;
-				color: #E4393C;
+			.span ul{
+				position:absolute;
+				top: 200px;
+				left: 510px;
+				width: 250px;
+				height: 680px;
 			}
-			#discuss div.mt a.current{
-				border: 1px solid #DDDDDD;
-				border-top: 2px solid #E4393C;
-				border-bottom: 0;
-				background: #ffffff;
-				margin-top: -6px;
-				height: 35px;
-				line-height: 35px;
-				color: #E4393C;
+			.span li{
+				line-height: 111px;
+				list-style-type: none;
+			}
+			.pane{
+				width: 256px;
+				text-align: center;
+				font-family: "华文新魏";
+				font-size: 20px;
+			}
+			.pane:hover{
+				background-color: white;
+			}
+			.pane1{
+				width: 256px;
+				height: 114px;
+				border-bottom-left-radius: 15px;
+				border-bottom-right-radius: 15px;
+				text-align: center;
+				font-family: "华文新魏";
+				font-size: 20px;
+			}
+			.pane1:hover{
+				background-color: white;
+			}
+			.center{
+				position: absolute;
+				top: 30px;
+				left: 820px;
+				width: 850px;
+				height: 850px;
+				border: 3px solid white;
+				border-radius: 20px;
+				background: rgba(250,250,250,0.8);
+			}
+			.center iframe{
+				border-radius: 20px;
+			}
+			#showtime1{
+					position: absolute;
+					left: 30px;
+					bottom: 20px;
+					color: #517693;
+					font-size: 28px;
+					font-weight: bold;
+					font-family: "华文新魏";
+					}
+			#showtime2{
+					position: absolute;
+					left:40px;
+					bottom: -15px;
+					color: #517693;
+					font-size: 25px;
+					font-weight: bold;
+					font-family: "华文新魏";
+					}
+			.time{
+				position: absolute;
+				right: 30px;
+				bottom: 5px;
+				color: #517693;
+				font-size: 28px;
+				font-weight: bold;
+				font-family: "华文新魏";
+				}
+			.bottom
+			{
+				position: absolute;
+				top: 1110px;
+				width: 2110px;
+				height: 85px;
 			}
 		</style>
 	</head>
 	<body>
-		<!--论坛div-->
-		<div id="discuss">
-			<!--页签菜单栏-->
-			<div class="mt">
-				<a href="#">网友讨论圈</a>
-				<a href="#" class="current">晒单帖</a>
-				<a href="#">问答帖</a>
-				<a href="#">讨论帖</a>
+		<div class="top">
+			<div class="top-left">
+				<h1>止于此</h1>
+				<span>风止于秋水，我止于你💗</span>
 			</div>
-			<!--讨论内容-->
-			<div id="discuss-content">
-				<!--表格内容-->
-				<table id="discuss-datas">
-					<!--标题栏-->
-					<tr class="header">
-						<td class="col1">主题</td>
-						<td>浏览/回复</td>
-						<td>作者</td>
-						<td>时间</td>
-					</tr>
-					<!--内容栏-->
-					<tbody>
-						<tr>
-							<td class="col1">
-								<i class="sheng"></i>
-								<a href="#">起点合同事件</a>
-							</td>
-							<td>12/60</td>
-							<td><a href="">阅文</a></td>
-							<td>2019/12/25</td>
-						</tr>
-						<tr>
-							<td class="col1">
-								<i class="meidao"></i>
-								<a href="">不知道写点什么好</a>
-							</td>
-							<td>12/160</td>
-							<td><a href="">作者</a></td>
-							<td>2019/11/20</td>
-						</tr>
-						<tr>
-							<td class="col1">
-								<i></i>
-								<a href="">这可不算划水</a>
-							</td>
-							<td>122/990</td>
-							<td><a href="">发四！</a></td>
-							<td>2019/12/10</td>
-						</tr>
-					</tbody>
-				</table>
-				<!--显示的拓展内容-->
-				<div id="discuss-total">
-					<div class="all_discuss">
-						共900个话题
-						<a href="#">浏览全部话题>>></a>
-					</div>
-					<div class="new_discuss" align="right">
-						有问题要与其他用户讨论
-						<a href="#">[发表帖子]</a>
-					</div>
+			<a class="top1" href="home page.html">首页</a>
+			<a class="top2" href="work.html">苦海无涯</a>
+			<a class="top3" href="life.html">人生旅途</a>
+			<a class="top4" href="message board.html">人生良言</a>
+			<span class="top-right">黎曙</span>
+			<img src="img/头像.jpg" title="头像" alt="头像" />
+			<span class="top-right1"><input type="submit" value="登录"></span>
+		</div>
+		<div class="main">
+			<div class="main-left">
+				<h1>欢迎来到黎曙的世界！<br/>Welcome to Li Shu's world!</h1>
+				<h3>今天也要加油昂！<br/>Today, we still have to refuel!</h3>
+			</div>
+			<div class="main-center">
+				<div class="center-left">
+					<a href="my.html" target="frame"><img src="img/头像.jpg" alt="头像" title="头像" /></a>
+					<span id="name">黎曙<br/>非常热爱生活</span>
 				</div>
 			</div>
-			
+				<div class="span">
+						<ul>
+							<li class="pane"><a href="main1.html" target="frame">主页</a></li>
+							<li class="pane"><a href="work.html" target="frame">笔记</a></li>
+							<li class="pane"><a href="conclude.html" target="frame">归档</a></li>
+							<li class="pane"><a href="email.html" target="frame">邮箱</a></li>
+							<li class="pane"><a href="about.html" target="frame">关于</a></li>
+							<li class="pane1">更多</li>
+						</ul>
+				</div>
+				<div class="center">
+					<iframe src="main1.html" width="850px" height="850px" frameborder="0" scrolling="yes" name="frame"></iframe>
+				</div>
+			</div>
+		<div class="bottom">
+			<p id="showtime1" title="我们的征途是星辰大海">哈雷彗星的约定：</p>
+			<p id="showtime2" >14193天3:22:55</p>
+			<script>
+				var showtime2 = function () {
+					var nowtime = new Date();
+						endtime = new Date("2061/1/1");
+					var lefttime = endtime.getTime() - nowtime.getTime();
+						leftd = Math.floor(lefttime/(1000*60*60*24));  
+						lefth = Math.floor(lefttime/(1000*60*60)%24);  
+						leftm = Math.floor(lefttime/(1000*60)%60);  
+						lefts = Math.floor(lefttime/1000%60); 
+					return leftd + "&#22825;" + lefth + ":" + leftm + ":" + lefts;
+				}
+				var div = document.getElementById("showtime2");
+				setInterval (function () {
+					div.innerHTML = showtime2();
+				}, 1000);
+			</script>
+			<div class="time">
+				<script> 
+					document.write("<span id=time></span>") 
+					setInterval("time.innerText=new Date().toLocaleString()",1000)
+				</script> 
+			</div>
 		</div>
 	</body>
 </html>
+
